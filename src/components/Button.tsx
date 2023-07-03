@@ -1,12 +1,24 @@
 interface Props {
   children: string;
-  color?: "primary" | "secondary" | "success" | "warning" | "danger";
   onClick: () => void;
+  color?: "primary" | "secondary" | "success" | "warning" | "danger";
+  className?: string;
+  disable?: boolean;
 }
 
-function Button({ children, color = "primary", onClick }: Props) {
+function Button({
+  children = "Button",
+  onClick,
+  color = "primary",
+  className = "",
+  disable = false,
+}: Props) {
+  const buttonClassName = className
+    ? `btn btn-${color} ${className}`
+    : `btn btn-${color}`;
+
   return (
-    <button className={"btn btn-" + color} onClick={onClick}>
+    <button className={buttonClassName} onClick={onClick} disabled={disable}>
       {children}
     </button>
   );

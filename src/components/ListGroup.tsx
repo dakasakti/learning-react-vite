@@ -18,20 +18,25 @@ function ListGroup({ heading, items, onSelectItem }: Props) {
       {items.length === 0 && <p>Items not found</p>}
       <ul className="list-group">
         {items.map((item, index) => (
-          <li
-            className={
-              selectedIndex === index
-                ? "list-group-item active"
-                : "list-group-item"
-            }
-            key={index}
-            onClick={() => {
-              setSelectedIndex(index);
-              onSelectItem(item);
-            }}
+          <a
+            href="#"
+            className="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
           >
-            {item}
-          </li>
+            <li
+              className={
+                selectedIndex === index
+                  ? "list-group-item active"
+                  : "list-group-item"
+              }
+              key={index}
+              onClick={() => {
+                setSelectedIndex(index);
+                onSelectItem(item);
+              }}
+            >
+              {item}
+            </li>
+          </a>
         ))}
       </ul>
     </>

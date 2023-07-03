@@ -2,6 +2,7 @@ import { useState } from "react";
 import Alert from "./components/Alert";
 import Button from "./components/Button";
 import ListGroup from "./components/ListGroup";
+import Carts from "./components/Carts";
 
 function App() {
   const items = ["Jakarta", "Palembang", "Bali", "Papua"];
@@ -23,6 +24,21 @@ function App() {
           </Alert>
         )}
         <Button onClick={() => setAlertVisible(true)}>Click Me</Button>
+        <br />
+        <Carts />
+        <div className="mt-2">
+          <img
+            className="mt-2"
+            src="./public/props-vs-state.png"
+            width={728}
+            alt="props vs state"
+          />
+          <img
+            className="mt-2"
+            src="./public/lifecycle-hooks.PNG"
+            alt="lifecycle hooks"
+          />
+        </div>
       </div>
     </>
   );
