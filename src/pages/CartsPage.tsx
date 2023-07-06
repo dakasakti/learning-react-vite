@@ -1,13 +1,14 @@
 import { useState } from "react";
-import Counters from "./Counters";
-import Navbar from "./Navbar";
+import Counters from "../components/Counters";
+import Navbar from "../components/Navbar";
+import Anchor from "../components/Anchor";
 
 export interface CounterObject {
   id: number;
   value: number;
 }
 
-function Carts() {
+function CartsPage() {
   const [counters, setCounters] = useState([
     { id: 1, value: 3 },
     { id: 2, value: 1 },
@@ -46,7 +47,7 @@ function Carts() {
   };
 
   return (
-    <>
+    <div className="container">
       <h1>Carts</h1>
       <div className="mt-2">
         <Navbar
@@ -60,8 +61,9 @@ function Carts() {
           counters={counters}
         />
       </div>
-    </>
+      <Anchor to="/" children="Back To Home" />
+    </div>
   );
 }
 
-export default Carts;
+export default CartsPage;

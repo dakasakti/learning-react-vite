@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Button from "./Button";
-import { CounterObject } from "./Carts";
+import { CounterObject } from "../pages/CartsPage";
 
 interface Props {
   counter: CounterObject;
